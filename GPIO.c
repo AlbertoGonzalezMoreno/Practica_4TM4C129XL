@@ -1,24 +1,24 @@
 #include "lib/include.h"
 extern void Configurar_GPIO(void)
 {
-    SYSCTL->RCGCGPIO |=(1<<3); 
-    SYSCTL->PRGPIO |=(1<<3); 
-    GPIOD_AHB->ADCCTL = (1<<6);
-    GPIOD_AHB->AMSEL = 0x00;        
-    GPIOD_AHB->PCTL = 0x00000000;   
-    GPIOD_AHB->DIR = (0<<6);        
-    GPIOD_AHB->AFSEL = 0x00;       
-    GPIOD_AHB->PUR = (1<<6);          
-    GPIOD_AHB->DEN = (1<<6);          
+    SYSCTL->RCGCGPIO |=(1<<7); 
+    SYSCTL->PRGPIO |=(1<<7); 
+    GPIOH_AHB->ADCCTL = (1<<2);
+    GPIOH_AHB->AMSEL = 0x00;        
+    GPIOH_AHB->PCTL = 0x00000000;   
+    GPIOH_AHB->DIR = (0<<2);        
+    GPIOH_AHB->AFSEL = 0x00;       
+    GPIOH_AHB->PUR = (1<<2);          
+    GPIOH_AHB->DEN = (1<<2);          
 
-    NVIC->IP[0] = (NVIC->IP[0]&0x00FFFFFF) | 0x80000000;;
-    NVIC->ISER[0] = (1<<3);
+    NVIC->IP[0] = (NVIC->IP[0]&0xFFFFFF00) | 0x00000080;
+    NVIC->ISER[1] = (1<<0);
 
     
-    GPIOD_AHB->IM |= (0<<6); 
-    GPIOD_AHB->IS |= (0<<6);
-    GPIOD_AHB->IBE |= (0<<6);
-    GPIOD_AHB->IEV |= (1<<6);
-    GPIOD_AHB->RIS |= (0<<6);
-    GPIOD_AHB->IM |= (1<<6);
+    GPIOH_AHB->IM |= (0<<2); 
+    GPIOH_AHB->IS |= (0<<2);
+    GPIOH_AHB->IBE |= (0<<2);
+    GPIOH_AHB->IEV |= (1<<2);
+    GPIOH_AHB->RIS |= (0<<2);
+    GPIOH_AHB->IM |= (1<<2);
 }

@@ -11,7 +11,7 @@
     "targetArchitecture": "arm",
     "filterStderr": true,
     "serverStarted": "Info\\ :\\ [\\w\\d\\.]*:\\ hardware",
-    "program": "D:\\UAQ\\Septimo_Semestre\\Microcontroladores\\Programas\\Practica_4TM4C129XL\\gcc\\main.axf",
+    "program": "D:\\UAQ\\P_No_subidas\\4\\gcc\\main.axf",
     "args": [],
     "stopAtEntry": false,
     "cwd": "${workspaceRoot}",
@@ -20,7 +20,7 @@
     "MIMode": "gdb",
     "setupCommands": [
     { "text" : "target extended-remote :3333"},
-    { "text" : "load D:/UAQ/Septimo_Semestre/Microcontroladores/Programas/Practica_4TM4C129XL/gcc/main.axf"}
+    { "text" : "load D:/UAQ/P_No_subidas/4/gcc/main.axf"}
     ]
     }
     ]
